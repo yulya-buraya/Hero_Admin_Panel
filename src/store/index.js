@@ -1,5 +1,4 @@
-import { legacy_createStore as createStore , combineReducers, compose, applyMiddleware} from 'redux';
-import {thunk} from "redux-thunk"
+import { configureStore } from '@reduxjs/toolkit';
 import heroes from '../reducers/heroes';
 import filters from '../reducers/filters';
 
@@ -13,9 +12,10 @@ const stringMiddleware = () => (next) => (action) => {
     return next(action);
 }
 
-const store = createStore(
-     combineReducers({heroes, filters}),
-     applyMiddleware(thunk, stringMiddleware),
-    );
+const store = configureStore({
+reducer: {heroes,filters},
+middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
+devTools: process.env.NODE_ENV!=="production",
+});
 
 export default store;
