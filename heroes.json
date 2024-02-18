@@ -1,12 +1,5 @@
 {
-  "heroes": [
-    {
-      "id": "e570e0fb-d52f-41aa-a83b-742e04e57bdb",
-      "name": "fdsf",
-      "description": "dsdsds",
-      "element": "water"
-    }
-  ],
+  "heroes": [],
   "filters": [
     {
       "name": "all",
