@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
     filters: [],
@@ -6,7 +6,7 @@ const initialState = {
     activeFilter: 'all'
 }
 
-const filtersSlice = createSlice({
+export const filtersSlice = createSlice({
     name: "filters",
     initialState,
     reducers:{
